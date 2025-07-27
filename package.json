@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^6.24.0",
     "@vapi-ai/web": "^2.3.8",
     "axios": "^1.10.0",
+    "daisyui": "^5.0.46",
     "lucide-react": "^0.525.0",
     "mongoose": "^8.16.3",
     "next": "15.3.4",
