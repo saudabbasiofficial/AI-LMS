@@ -1,9 +1,13 @@
+import CompanianForm from '@/app/components/compform'
 import React from 'react'
 
 const page = () => {
   return (
 <>
-New Companian
+<section className='h-full flex items-center justify-center'>
+
+<CompanianForm/>
+</section>
 
 </>
   )

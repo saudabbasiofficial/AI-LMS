@@ -1,14 +1,16 @@
 import Card from "./components/card";
 import CompList from "./components/complist";
 import CTA from "./components/cta";
+import dbConnect from "./libs/db";
 
-export default function Home() {
+export default async function Home() {
   let data={
     name:"Neura the Brainy Explorer",
     topic:"Neural Network of the Brain",
     duration:45,
     subject:"Science"
   }
+  await dbConnect()
   return (
     <>
       <div className="mx-auto px-14 flex flex-col gap-8 bg-background h-full max-w-[1400px] pt-10 max-sm:px-2 mb-5;">

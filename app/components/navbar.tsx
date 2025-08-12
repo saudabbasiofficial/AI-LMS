@@ -1,4 +1,6 @@
-import { SignedOut, SignOutButton } from "@clerk/nextjs";
+"use client"
+import { SignedIn, SignedOut, SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
+import { User } from "@clerk/nextjs/server";
 import React from "react";
 
 const Navbar = () => {
@@ -13,19 +15,16 @@ const Navbar = () => {
         </a>
         <div className="flex gap-5 font-medium">
           <a href="/companian">Companian</a>
+          <SignedOut>
+            <SignInButton>
+
+              <button>Login</button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
           <a href="/profile">Profie</a>
-          {/* <SignedOut> */}
-          <a href="/login">Login</a>
-          {/* </SignedOut> */}
-          {/* <SignedOut> */}
-          {/* <button
-              onClick={() => {
-                SignOutButton;
-              }}
-            >
-              Logout
-            </button> */}
-          {/* </SignedOut> */}
+            <UserButton/>
+          </SignedIn>
         </div>
       </nav>
     </>
