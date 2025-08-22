@@ -1,30 +1,39 @@
 import { Bookmark, Clock } from "lucide-react";
 import React from "react";
+import { getSubjectColor } from "../libs/actions";
 
 const Card = ({data}: any) => {
   return (
     <>
-      <article className="p-4 gap-5 flex flex-col bg-green-200 w-full border rounded-4xl min-lg:max-w-[410px]">
-        <div className="flex justify-between items-center">
-          <p className="bg-black text-white rounded-lg px-3 ">{data.subject} </p>
-          <p className="bg-black text-white rounded-lg p-1 ">
-            <Bookmark />
-          </p>
-        </div>
+     <article className="p-5 flex flex-col gap-4 border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-shadow w-full max-w-md" style={{backgroundColor:getSubjectColor(data.subject)}}>
+  {/* Subject & Bookmark */}
+  <div className="flex justify-between items-center">
+    <span className="text-sm font-medium bg-gray-900 text-white px-3 py-1 rounded-full">
+      {data.subject}
+    </span>
+    <button
+      aria-label="Save Companion"
+      className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+    >
+      <Bookmark className="text-gray-700" />
+    </button>
+  </div>
 
-        <div className="flex flex-col gap-2">
-          <h1 className="font-bold text-2xl">{data.name}</h1>
-          <p>{data.topic} </p>
-          <p className="flex items-center gap-1">
-            <Clock size={20} /> {data.duration} mins duration
-          </p>
-        </div>
-        
-          <button className="text-center bg-black px-8 py-2 text-white rounded-xl">
-            Launch Lesson
-          </button>
-        
-      </article>
+  {/* Title & Info */}
+  <div className="flex flex-col gap-1">
+    <h2 className="font-semibold text-lg text-gray-900">{data.name}</h2>
+    <p className="text-sm text-gray-500">{data.topic}</p>
+    <p className="flex items-center gap-1 text-sm text-gray-500">
+      <Clock size={16} /> {data.duration} mins
+    </p>
+  </div>
+
+  {/* CTA Button */}
+  <a className="mt-2 bg-gray-900 text-white text-sm font-medium py-2 text-center rounded-lg hover:bg-gray-800 transition-colors" href={`/companian/${data._id}`}>
+    Launch Lesson
+  </a>
+</article>
+
     </>
   );
 };

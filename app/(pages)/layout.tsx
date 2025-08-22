@@ -5,7 +5,7 @@ const Layout =async ({ children }: any) => {
   const { userId }=await auth()
 
   if(!userId){
-    redirect("/sign-in")
+    // redirect("/sign-in")
   }
   return (
     <div>

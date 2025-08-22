@@ -15,7 +15,7 @@ export default async function Home() {
     <>
       <div className="mx-auto px-14 flex flex-col gap-8 bg-background h-full max-w-[1400px] pt-10 max-sm:px-2 mb-5;">
         <h1 className="font-bold text-4xl">Popular Companian</h1>
-        <section className="flex gap-4 justify-between items-start w-full max-lg:flex-col-reverse max-lg:items-center;">
+        <section className="flex gap-4 justify-between items-center w-full max-lg:flex-col-reverse max-lg:items-center;">
           <Card data={data} />
           <Card data={data} />
           <Card data={data} />

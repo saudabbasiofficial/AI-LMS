@@ -17,7 +17,10 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body>
+        <body
+        //  className="px-[10%] max-md:px[5%]"
+         
+         >
           <Navbar />
           {children}
         </body>
