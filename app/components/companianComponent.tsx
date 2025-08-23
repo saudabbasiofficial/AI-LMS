@@ -114,6 +114,8 @@ const CompanianComponent = ({ data }: any) => {
     <>
       <section className="flex max-md:flex-col gap-5">
         <div className="h-[70vh] border rounded-2xl flex flex-col gap-3 items-center justify-center w-full">
+          <div className="">
+
           {(Callstatus === ECallStatus.INACTIVE || Callstatus === ECallStatus.FINISHED) && (
             <img src="/next.svg" alt="Idle" className="h-15 object-contain" />
           )}
@@ -124,6 +126,7 @@ const CompanianComponent = ({ data }: any) => {
 
           <h1 className="font-bold text-4xl">{data.name}</h1>
         </div>
+          </div>
 
         <section className="w-1/3 max-md:w-full flex flex-col gap-4">
           <div className="rounded-lg border h-90 flex items-center justify-center gap-2 p-10 flex-col">
@@ -166,7 +169,7 @@ const CompanianComponent = ({ data }: any) => {
           </button>
         </section>
       </section>
-      <div className="no-scr">MESSAGES</div>
+      {/* <div className="no-scr">MESSAGES</div> */}
     </>
   );
 };

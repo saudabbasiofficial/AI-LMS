@@ -29,7 +29,7 @@ export default  function CompanionForm() {
 
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+    // e.preventDefault();
     const res = await axios.post("/api/companians/new", formData);
     try {
       console.log("this is the api response",res.data.companion)

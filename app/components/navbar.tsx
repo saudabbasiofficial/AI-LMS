@@ -6,12 +6,12 @@ import React from "react";
 const Navbar = () => {
   return (
     <>
-      <nav className="py-3 px-5 md:px-20 flex justify-between ">
+      <nav className="py-3 px-5 md:px-20 flex justify-between items-center ">
         <a
           href="
         /"
         >
-          <img src="/next.svg" alt="" className="h-7" />
+          <img src="/logo.png" alt="" className="h-20" />
         </a>
         <div className="flex gap-5 font-medium">
           <a href="/companian">Companian</a>
