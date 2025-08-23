@@ -10,9 +10,9 @@ export default  function CompanionForm() {
     name: "",
     subject: "Math",
     topic: "",
-    voice: "Female",
-    style: "Casual",
-    language: "English",
+    voice: "female",
+    style: "casual",
+    language: "en",
     image: null as File | null,
   });
 
@@ -26,13 +26,7 @@ export default  function CompanionForm() {
     }));
   };
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null;
-    setFormData((prev) => ({
-      ...prev,
-      image: file,
-    }));
-  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,6 +50,9 @@ export default  function CompanionForm() {
     <>
    
       <ToastContainer/>
+
+
+
 <div className="min-h-screen w-full flex items-center justify-center px-4">
   <form
     onSubmit={handleSubmit}
@@ -66,22 +63,7 @@ export default  function CompanionForm() {
     </h1>
 
     {/* Image Upload */}
-    <label className="flex items-center gap-3 cursor-pointer">
-      <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center text-lg">
-        📷
-      </div>
-      <span className="text-sm text-gray-700 font-medium">
-        Upload image
-      </span>
-      <input
-        type="file"
-        name="image"
-        onChange={handleImageUpload}
-        className="hidden"
-        accept="image/*"
-      />
-    </label>
-
+  
     {/* Text Inputs */}
     <div>
       <label className="block text-sm font-medium text-gray-700">
@@ -109,12 +91,13 @@ export default  function CompanionForm() {
           onChange={handleChange}
           className="w-full appearance-none rounded-lg border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm"
         >
-          <option value="Maths">Maths</option>
-          <option value="Language">Language</option>
-          <option value="Science">Science</option>
-          <option value="History">History</option>
-          <option value="Coding">Coding</option>
-          <option value="Economics">Economics</option>
+          <option value="maths">Maths</option>
+          <option value="language">Language</option>
+          <option value="science">Science</option>
+          <option value="history">History</option>
+          <option value="coding">Coding</option>
+          <option value="economics">Business & Finance</option>
+          <option value="selfimprovement">Self Improvement</option>
         </select>
         {/* Custom Arrow */}
         <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
@@ -151,8 +134,8 @@ export default  function CompanionForm() {
             onChange={handleChange}
             className="w-full appearance-none rounded-lg border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm"
           >
-            <option value="Female">Female</option>
-            <option value="Male">Male</option>
+            <option value="female">Female</option>
+            <option value="male">Male</option>
           </select>
           <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
             ▼
@@ -193,9 +176,9 @@ export default  function CompanionForm() {
           onChange={handleChange}
           className="w-full appearance-none rounded-lg border border-gray-200 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 shadow-sm"
         >
-          <option value="English">English</option>
-          <option value="Urdu">Urdu</option>
-          <option value="Spanish">Spanish</option>
+          <option value="en">English</option>
+          <option value="ur">Urdu</option>
+        
         </select>
         <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">
           ▼

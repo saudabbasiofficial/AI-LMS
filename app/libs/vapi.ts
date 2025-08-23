@@ -7,7 +7,13 @@ const voices = {
   female: { casual: "ZIlrSGI4jZqobxRKprJz", formal: "sarah" },
 };
 
-export const configureAssistant = (voice: string, style: string) => {
+
+export const configureAssistant = (voice: string, style: string,) => {
+
+
+
+
+
 const selectedVoice = voices[voice as keyof typeof voices] || {};
 const voiceId =
   selectedVoice[style as keyof typeof selectedVoice] || "sarah";
@@ -20,7 +26,7 @@ const voiceId =
     transcriber: {
       provider: "deepgram",
       model: "nova-3",
-      language: "en",
+      language: 'en',
     },
     voice: {
       provider: "11labs",
@@ -54,3 +60,6 @@ const voiceId =
   };
   return vapiAssistant;
 };
+
+
+

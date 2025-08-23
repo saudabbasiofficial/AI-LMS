@@ -30,6 +30,7 @@ const CompanianComponent = ({ data }: any) => {
         subject: data.subject,
         topic: data.topic,
         style: data.style,
+      
       },
     };
 

@@ -1,4 +1,3 @@
-
 // import { auth } from "@clerk/nextjs/server";
 import CompanianModel from "../models/companian";
 import Session_Model from "../models/session_history";
@@ -46,24 +45,6 @@ export async function getAcompanian(id: string) {
     return null;
   }
 }
-export const getSubjectColor = (subject: string) => {
-  subject=subject.toLowerCase()
-  return subjectsColors[subject as keyof typeof subjectsColors];
-};
-export const getSubjectImage = (subject: string) => {
-  subject=subject.toLowerCase()
-  return subjectsColors[subject as keyof typeof subjectImage];
-};
-
-export const subjects = [
-  "Maths",
-  "Language",
-  "Science",
-  "History",
-  "Coding",
-  "Economics",
-];
-
 export const subjectsColors = {
   science: "#E5D0FF",
   maths: "#FFDA6E",
@@ -71,13 +52,27 @@ export const subjectsColors = {
   coding: "#FFC8E4",
   history: "#FFECC8",
   economics: "#C8FFDF",
+  selfimprovement: "#A7F3D0", // calm green tone for growth
 };
-export const subjectImage = { 
+export const getSubjectColor = (subject: string) => {
+  subject = subject.toLowerCase();
+  return subjectsColors[subject as keyof typeof subjectsColors];
+};
+
+export const subjects = [
+  "maths",
+  "language",
+  "science",
+  "history",
+  "coding",
+  "economics",
+];
+
+export const subjectImage = {
   maths: "/maths.png",
   language: "/language.png",
   science: "/science.png",
   history: "/history.png",
   coding: "/coding.png",
-  economics: "/economics.png"
-}
-
+  economics: "/economics.png",
+};
