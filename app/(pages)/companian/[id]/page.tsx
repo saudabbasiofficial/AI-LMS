@@ -1,3 +1,4 @@
+
 import CompanianComponent from "@/app/components/companianComponent";
 import { getAcompanian } from "@/app/libs/actions";
 import React from "react";
@@ -6,6 +7,14 @@ const page = async ({ params }: any) => {
   const { id } = await params;
   const companian = await getAcompanian(id);
   console.log(companian);
+
+
+const safeCompanian = {
+  ...companian.toObject(), // converts Mongoose doc to plain object
+  _id: companian._id.toString(), // ensure it's a string
+};
+
+
 
 
 
@@ -38,7 +47,7 @@ const page = async ({ params }: any) => {
           </section>
 
        
-         <CompanianComponent data={companian.toJSON()}/>
+         <CompanianComponent data={safeCompanian}/>
 
        
         </article>

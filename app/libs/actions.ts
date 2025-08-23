@@ -1,4 +1,7 @@
+
+// import { auth } from "@clerk/nextjs/server";
 import CompanianModel from "../models/companian";
+import Session_Model from "../models/session_history";
 import dbConnect from "./db";
 
 interface IallCompanion {
@@ -77,3 +80,4 @@ export const subjectImage = {
   coding: "/coding.png",
   economics: "/economics.png"
 }
+
